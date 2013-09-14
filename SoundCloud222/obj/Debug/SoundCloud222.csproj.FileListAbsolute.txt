@@ -1,0 +1,7 @@
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\bin\SoundCloud222.dll
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\bin\SoundCloud222.pdb
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\obj\Debug\SoundCloud222.csprojResolveAssemblyReference.cache
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\obj\Debug\SoundCloud222.dll
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\obj\Debug\SoundCloud222.pdb
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\bin\EntityFramework.dll
+C:\Users\smsng\Documents\Visual Studio 2012\Projects\SoundCloud2Android\SoundCloud222\bin\EntityFramework.xml

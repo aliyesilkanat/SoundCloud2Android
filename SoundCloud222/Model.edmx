@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ParcalarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ParcalarModelStoreContainer">
+          <EntitySet Name="Parcalar" EntityType="ParcalarModel.Store.Parcalar" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Parcalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Function Name="ParcaEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parcaLink" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="ParcalariAl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ParcalarModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="aliyesilkanatEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Parcalars" EntityType="ParcalarModel.Parcalar" />
+          <FunctionImport Name="sp_ParcaEkle">
+            <Parameter Name="parcaLink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ParcalariAl" ReturnType="Collection(ParcalarModel.sp_ParcalariAl_Result)" />
+        </EntityContainer>
+        <EntityType Name="Parcalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <ComplexType Name="sp_ParcalariAl_Result">
+          <Property Type="String" Name="Link" Nullable="false" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ParcalarModelStoreContainer" CdmEntityContainer="aliyesilkanatEntities">
+          <EntitySetMapping Name="Parcalars">
+            <EntityTypeMapping TypeName="ParcalarModel.Parcalar">
+              <MappingFragment StoreEntitySet="Parcalar">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_ParcaEkle" FunctionName="ParcalarModel.Store.ParcaEkle" />
+          <FunctionImportMapping FunctionImportName="sp_ParcalariAl" FunctionName="ParcalarModel.Store.ParcalariAl">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ParcalarModel.sp_ParcalariAl_Result">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

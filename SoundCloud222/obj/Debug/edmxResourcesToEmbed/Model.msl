@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ParcalarModelStoreContainer" CdmEntityContainer="aliyesilkanatEntities">
+    <EntitySetMapping Name="Parcalars">
+      <EntityTypeMapping TypeName="ParcalarModel.Parcalar">
+        <MappingFragment StoreEntitySet="Parcalar">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ParcaEkle" FunctionName="ParcalarModel.Store.ParcaEkle" />
+    <FunctionImportMapping FunctionImportName="sp_ParcalariAl" FunctionName="ParcalarModel.Store.ParcalariAl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ParcalarModel.sp_ParcalariAl_Result">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

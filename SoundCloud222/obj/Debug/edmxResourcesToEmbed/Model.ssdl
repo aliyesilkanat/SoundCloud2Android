@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ParcalarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ParcalarModelStoreContainer">
+    <EntitySet Name="Parcalar" EntityType="ParcalarModel.Store.Parcalar" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Parcalar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Function Name="ParcaEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parcaLink" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ParcalariAl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>
