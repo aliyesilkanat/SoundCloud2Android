@@ -18,5 +18,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ParcaSil" FunctionName="ParcalarModel.Store.ParcaSil" />
   </EntityContainerMapping>
 </Mapping>

@@ -19,6 +19,9 @@
           <Parameter Name="parcaLink" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="ParcalariAl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ParcaSil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -26,9 +29,12 @@
         <EntityContainer Name="aliyesilkanatEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Parcalars" EntityType="ParcalarModel.Parcalar" />
           <FunctionImport Name="sp_ParcaEkle">
-            <Parameter Name="parcaLink" Mode="In" Type="String" />
+          <Parameter Name="parcaLink" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_ParcalariAl" ReturnType="Collection(ParcalarModel.sp_ParcalariAl_Result)" />
+          <FunctionImport Name="sp_ParcaSil">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Parcalar">
           <Key>
@@ -64,6 +70,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_ParcaSil" FunctionName="ParcalarModel.Store.ParcaSil" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

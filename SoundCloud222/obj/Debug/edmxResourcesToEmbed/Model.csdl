@@ -6,6 +6,9 @@
       <Parameter Name="parcaLink" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_ParcalariAl" ReturnType="Collection(ParcalarModel.sp_ParcalariAl_Result)" />
+    <FunctionImport Name="sp_ParcaSil">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Parcalar">
     <Key>

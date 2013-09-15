@@ -43,5 +43,14 @@ namespace SoundCloud222
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ParcalariAl_Result>("sp_ParcalariAl");
         }
+    
+        public virtual int sp_ParcaSil(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ParcaSil", iDParameter);
+        }
     }
 }
