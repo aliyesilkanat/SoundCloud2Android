@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
+    <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model.Context.cs">
@@ -95,6 +96,10 @@
     </Compile>
     <Compile Include="sp_ParcalariAl_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebService.asmx.cs">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

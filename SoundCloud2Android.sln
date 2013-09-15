@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloud222", "SoundCloud222\SoundCloud222.csproj", "{A7E674E5-8EB2-4674-9FF7-5137D9257023}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloud2Android", "SoundCloud222\SoundCloud2Android.csproj", "{A7E674E5-8EB2-4674-9FF7-5137D9257023}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
