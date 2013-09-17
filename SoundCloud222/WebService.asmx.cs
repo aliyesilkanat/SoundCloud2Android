@@ -25,7 +25,12 @@ namespace SoundCloud222
                 l.Add(res.Link);
             return l;
         }
-        
+        [WebMethod]
+        public void deleteLink(int id)
+        {
+            aliyesilkanatEntities e = new aliyesilkanatEntities();
+            e.sp_ParcaSil(id);
+        }
         
       
     }
