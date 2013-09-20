@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>AndroidDeneme2</name>
+	<name>SC2AndroidAPP</name>
 	<comment></comment>
 	<projects>
+		<project>NewQuickAction</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

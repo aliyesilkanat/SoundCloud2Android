@@ -9,6 +9,9 @@
     <FunctionImport Name="sp_ParcaSil">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_BirParcayiCek" ReturnType="Collection(ParcalarModel.sp_BirParcayiCek_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Parcalar">
     <Key>
@@ -18,6 +21,10 @@
     <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
   </EntityType>
   <ComplexType Name="sp_ParcalariAl_Result">
+    <Property Type="String" Name="Link" Nullable="false" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_BirParcayiCek_Result">
     <Property Type="String" Name="Link" Nullable="false" />
     <Property Type="Int32" Name="ID" Nullable="false" />
   </ComplexType>

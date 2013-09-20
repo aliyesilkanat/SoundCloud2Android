@@ -19,5 +19,13 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_ParcaSil" FunctionName="ParcalarModel.Store.ParcaSil" />
+    <FunctionImportMapping FunctionImportName="sp_BirParcayiCek" FunctionName="ParcalarModel.Store.BirParcayiCek">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ParcalarModel.sp_BirParcayiCek_Result">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

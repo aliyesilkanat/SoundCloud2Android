@@ -15,6 +15,9 @@
           <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
+        <Function Name="BirParcayiCek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
         <Function Name="ParcaEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parcaLink" Type="nvarchar(max)" Mode="In" />
         </Function>
@@ -33,7 +36,10 @@
           </FunctionImport>
           <FunctionImport Name="sp_ParcalariAl" ReturnType="Collection(ParcalarModel.sp_ParcalariAl_Result)" />
           <FunctionImport Name="sp_ParcaSil">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_BirParcayiCek" ReturnType="Collection(ParcalarModel.sp_BirParcayiCek_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Parcalar">
@@ -44,6 +50,10 @@
           <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
         </EntityType>
         <ComplexType Name="sp_ParcalariAl_Result">
+          <Property Type="String" Name="Link" Nullable="false" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_BirParcayiCek_Result">
           <Property Type="String" Name="Link" Nullable="false" />
           <Property Type="Int32" Name="ID" Nullable="false" />
         </ComplexType>
@@ -71,6 +81,14 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_ParcaSil" FunctionName="ParcalarModel.Store.ParcaSil" />
+          <FunctionImportMapping FunctionImportName="sp_BirParcayiCek" FunctionName="ParcalarModel.Store.BirParcayiCek">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ParcalarModel.sp_BirParcayiCek_Result">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

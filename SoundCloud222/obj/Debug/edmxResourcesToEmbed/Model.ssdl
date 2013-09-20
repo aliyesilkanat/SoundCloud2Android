@@ -10,6 +10,9 @@
     <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
+  <Function Name="BirParcayiCek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
   <Function Name="ParcaEkle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parcaLink" Type="nvarchar(max)" Mode="In" />
   </Function>
