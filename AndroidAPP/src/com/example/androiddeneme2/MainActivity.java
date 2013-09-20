@@ -140,7 +140,7 @@ public class MainActivity extends Activity {
 	private static void parcalariCek() {
 		veritabaniParcalar = new ArrayList<Track>();
 		titleList = new ArrayList<String>();
-		SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
+		SoapObject Request = new SoapObject("http://aliyesilkanat.somee.com", METHOD_NAME);
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
 				SoapEnvelope.VER11);
 		envelope.dotNet = true;
